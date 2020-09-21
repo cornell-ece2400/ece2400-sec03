@@ -1,6 +1,6 @@
 
-#include <stdio.h>
 #include "avg.h"
+#include <stdio.h>
 
 int main()
 {
