@@ -49,7 +49,7 @@ void __ece2400_fail( char *file, int lineno, char *expr )
 {
   file = __ece2400_get_file_name( file );
   if ( __n < 0 ) printf( "\n" );
-  printf(" - [ " RED "FAILED" RESET " ] File %s:%d:  %s\n", file, lineno, expr );
+  printf(" - [ " RED "FAILED" RESET " ] %s:%d: %s\n", file, lineno, expr );
   __failed = 1;
 }
 
@@ -62,10 +62,10 @@ void __ece2400_check_and_print_uniop( char *file, int lineno, char *expr )
   file = __ece2400_get_file_name( file );
   if ( __failure_condition ) {
     if ( __n < 0 ) printf( "\n" );
-    printf(" - [ " RED "FAILED" RESET " ] File %s:%d:  %s (%d)\n", file, lineno, expr, __int_expr0 );
+    printf(" - [ " RED "FAILED" RESET " ] %s:%d: %s (%d)\n", file, lineno, expr, __int_expr0 );
     __failed = 1;
   } else if ( __n > 0 ) {
-    printf(" - [ " GREEN "passed" RESET " ] File %s:%d:  %s (%d)\n", file, lineno, expr, __int_expr0 );
+    printf(" - [ " GREEN "passed" RESET " ] %s:%d: %s (%d)\n", file, lineno, expr, __int_expr0 );
   } else if ( __n < 0 ) {
     printf( GREEN "." RESET );
   }
@@ -80,11 +80,11 @@ void __ece2400_check_and_print_int_binop( char *file, int lineno, char *expr1, c
   file = __ece2400_get_file_name( file );
   if ( __failure_condition ) {
     if ( __n < 0 ) printf( "\n" );
-    printf(" - [ " RED "FAILED" RESET " ] File %s:%d:  %s != %s (%d != %d)\n",
+    printf(" - [ " RED "FAILED" RESET " ] %s:%d: %s != %s (%d != %d)\n",
            file, lineno, expr1, expr2, __int_expr0, __int_expr1 );
     __failed = 1;
   } else if ( __n > 0 ) {
-    printf(" - [ " GREEN "passed" RESET " ] File %s:%d:  %s == %s (%d == %d)\n",
+    printf(" - [ " GREEN "passed" RESET " ] %s:%d: %s == %s (%d == %d)\n",
            file, lineno, expr1, expr2, __int_expr0, __int_expr1 );
   } else if ( __n < 0 ) {
     printf( GREEN "." RESET );
@@ -100,11 +100,11 @@ void __ece2400_check_and_print_double_binop( char *file, int lineno, char *expr1
   file = __ece2400_get_file_name( file );
   if ( __failure_condition ) {
     if ( __n < 0 ) printf( "\n" );
-    printf(" - [ " RED "FAILED" RESET " ] File %s:%d:  %s != %s (%.10e != %.10e)\n",
+    printf(" - [ " RED "FAILED" RESET " ] %s:%d: %s != %s (%.10e != %.10e)\n",
            file, lineno, expr1, expr2, __double_expr0, __double_expr1 );
     __failed = 1;
   } else if ( __n > 0 ) {
-    printf(" - [ " GREEN "passed" RESET " ] File %s:%d:  %s == %s (%.10e == %.10e)\n",
+    printf(" - [ " GREEN "passed" RESET " ] %s:%d: %s == %s (%.10e == %.10e)\n",
            file, lineno, expr1, expr2, __double_expr0, __double_expr1 );
   } else if ( __n < 0 ) {
     printf( GREEN "." RESET );

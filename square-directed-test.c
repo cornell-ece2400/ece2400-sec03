@@ -1,4 +1,4 @@
-#include "avg.h"
+#include "square.h"
 #include "ece2400-stdlib.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,7 +6,7 @@
 void test_case_1_basic()
 {
   printf("\n%s\n", __func__  );
-  ECE2400_CHECK_INT_EQ( avg( 10, 20 ), 15 );
+  ECE2400_CHECK_INT_EQ( square( 2 ), 4 );
 }
 
 int main( int argc, char* argv[] )

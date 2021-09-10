@@ -109,19 +109,14 @@ void __ece2400_check_and_print_double_binop(char*, int, char*, char*);
 
 #define ECE2400_DEBUG( ... ) \
   if ( __n > 0 ) { \
-    printf(" - [ " YELLOW "-info-" RESET " ] File %s:%d: ", __ece2400_get_file_name(__FILE__), __LINE__); \
+    printf(" - [ " YELLOW "-info-" RESET " ] %s:%d: ", __ece2400_get_file_name(__FILE__), __LINE__); \
     printf(__VA_ARGS__); \
     printf("\n"); \
   }
 
-#define ECE2400_DEBUG_NEWLINE \
-  if ( __n > 0 ) { printf("\n"); }
-
 #else
 
 #define ECE2400_DEBUG( ... ) ;
-
-#define ECE2400_DEBUG_NEWLINE ;
 
 #endif // #ifndef EVAL
 
